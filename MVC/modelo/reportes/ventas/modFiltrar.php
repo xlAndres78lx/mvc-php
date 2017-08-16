@@ -6,12 +6,12 @@
 			// Crear Objeto
 			$objFiltrar = new modFiltrar();
 			// SQL para listar los clientes
-			$sqlClientes = "SELECT * FROM clientes";
+			$sqlClientes = "SELECT * FROM clientes ORDER BY clie_nombres";
 			// Guardar la lista de clientes en una variable
 			$clientes = $objFiltrar->selectObjeto($sqlClientes);
 			// Mostrar los options
 			while($cliente = mysqli_fetch_object($clientes)){
-				echo "<option value='".$cliente->clie_identificacion."'>".$cliente->clie_nombres."</option>";
+				echo "<option value='".$cliente->clie_identificacion."'>".$cliente->clie_nombres." ".$cliente->clie_apellidos."</option>";
 			}
 		}
 		function selectProductos(){
@@ -23,7 +23,7 @@
 			$productos = $objFiltrar->selectObjeto($sqlProductos);
 			// Mostrar los options
 			while($producto = mysqli_fetch_object($productos)){
-				echo "<option value='".$producto->pro_codigo."'>".$producto->pro_descripcion."</option>";
+				echo "<option value='".$producto->prod_codigo."'>".$producto->prod_codigo." | ".$producto->prod_descripcion."</option>";
 			}
 		}
 	}

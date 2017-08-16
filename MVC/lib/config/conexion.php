@@ -12,11 +12,10 @@ class conexion {
 	}
 
 	function setConexion(){
-		require('config.php');
-		$this->host = $MySQL['host'];
-		$this->user = $MySQL['user'];
-		$this->pass = $MySQL['pass'];
-		$this->data = $MySQL['data'];
+		$this->host = 'localhost';
+		$this->user = 'root';
+		$this->pass = '';
+		$this->data = 'siga';
 	}
 
 	function conectar(){

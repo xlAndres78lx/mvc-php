@@ -6,7 +6,9 @@ class ventasController{
 		include_once 'vista/reportes/ventas/visFiltrar.php';
 	}
 	function listar(){
-		include_once 'vista/reportes/ventas/listar.php';
+		include_once 'modelo/reportes/ventas/modListar.php';
+		$objListar = new modListar();
+		include_once 'vista/reportes/ventas/visListar.php';
 	}
 }
 ?>
